@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Vazir;
+  src: url("./../fonts/Vazir-Medium.eot");
+  src: url("./../fonts/Vazir-Code.eot?#iefix") format("embedded-opentype"),
+    url("./../fonts/Vazir-Medium.woff") format("woff"),
+    url("./../fonts/Vazir-Medium.ttf") format("truetype");
+  font-weight: normal;
+}
+
+/* @font-face {
+  font-family: Vazir;
+  src: url("./../fonts/Vazir-Code-Hack.eot");
+  src: url("./../fonts/Vazir-Code-Hack.eot?#iefix") format("embedded-opentype"),
+    url("./../fonts/Vazir-Code-Hack.woff") format("woff"),
+    url("./../fonts/Vazir-Code-Hack.ttf") format("truetype");
+  font-weight: normal;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

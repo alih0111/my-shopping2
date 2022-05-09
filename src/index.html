@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+</head>
+
+<body class="font-vazir bg-gray-200">
+  <div id="overlay" class="hidden overlay w-full h-screen absolute bg-slate-900 opacity-50 z-50"></div>
+  <!-- Start Navbar -->
+  <div class="bg-indigo-100">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-indigo-600" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <span class="text-lg">RFA Shopping Center</span>
+      <button id="cart-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-indigo-600" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span class="bg-red-500 w-5 h-5 rounded-full absolute top-1 p-[3px] text-center text-white cart-items">0</span>
+      </button>
+    </div>
+  </div>
+  <!-- End Navbar -->
+  <!-- Start Dashbord -->
+  <div class="flex justify-center mt-10">
+    <span class="font-bold text-3xl">Our Products</span>
+  </div>
+
+  <div class="">
+    <div
+      class="products-center container mt-10 mx-auto xl:gap-10 sm:gap-5 grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2">
+      <!-- <div class="bg-gray-100 rounded overflow-hidden mx-auto shadow mb-3 h-auto max-w-[400px]">
+        <img src="/src/img/new.jpg" alt="" />
+        <div class="flex justify-between pt-5 px-5">
+          <span>7.99$</span>
+          <p>folan panel bed</p>
+        </div>
+        <div class="flex justify-center">
+          <button class="bg-indigo-200 p-2 m-3 rounded">In Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 rounded overflow-hidden mx-auto mb-3 shadow h-auto max-w-[400px]">
+        <img src="/src/img/new1.jpg" alt="" />
+        <div class="flex justify-between pt-5 px-5">
+          <span>7.99$</span>
+          <p>folan panel bed</p>
+        </div>
+        <div class="flex justify-center">
+          <button class="bg-indigo-200 p-2 m-3 rounded">In Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 rounded overflow-hidden mx-auto mb-3 shadow h-auto max-w-[400px]">
+        <img src="/src/img/new2.jpg" alt="" />
+        <div class="flex justify-between pt-5 px-5">
+          <span>7.99$</span>
+          <p>folan panel bed</p>
+        </div>
+        <div class="flex justify-center">
+          <button class="bg-indigo-200 p-2 m-3 rounded">In Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 rounded overflow-hidden mx-auto shadow h-auto max-w-[400px]">
+        <img src="/src/img/new3.jpg" alt="" />
+        <div class="flex justify-between pt-5 px-5">
+          <span>7.99$</span>
+          <p>folan panel bed</p>
+        </div>
+        <div class="flex justify-center">
+          <button class="bg-indigo-200 p-2 m-3 rounded">In Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 rounded overflow-hidden mx-auto shadow h-auto max-w-[400px]">
+        <img src="/src/img/new.jpg" alt="" />
+        <div class="flex justify-between pt-5 px-5">
+          <span>7.99$</span>
+          <p>folan panel bed</p>
+        </div>
+        <div class="flex justify-center">
+          <button class="bg-indigo-200 p-2 m-3 rounded">In Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 rounded overflow-hidden mx-auto shadow h-auto max-w-[400px]">
+        <img src="/src/img/new2.jpg" alt="" />
+        <div class="flex justify-between pt-5 px-5">
+          <span>7.99$</span>
+          <p>folan panel bed</p>
+        </div>
+        <div class="flex justify-center">
+          <button class="bg-indigo-200 p-2 m-3 rounded">In Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 rounded overflow-hidden mx-auto shadow h-auto max-w-[400px]">
+        <img src="/src/img/new1.jpg" alt="" />
+        <div class="flex justify-between pt-5 px-5">
+          <span>7.99$</span>
+          <p>folan panel bed</p>
+        </div>
+        <div class="flex justify-center">
+          <button class="bg-indigo-200 p-2 m-3 rounded">In Cart</button>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <!-- End Dashbord -->
+  <!-- Start Cart -->
+  <div class="flex justify-center">
+    <div id="cart-cart" class="hidden justify-center mx-auto items-center absolute z-50 top-40">
+      <div class="w-96 bg-white">
+        <p class="text-center pt-3">Your Cart</p>
+        <div class="cart-content">
+          <!-- <div class="flex justify-between p-4 items-center">
+          <img class="w-24 rounded" src="/src/img/new1.jpg" alt="" />
+          <div class="flex flex-col">
+            <span>folan panel</span>
+            <span class="text-gray-400">$14.99</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <button>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+              </svg>
+            </button>
+            <span>1</span>
+            <button>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+          </button>
+        </div> -->
+        </div>
+        <div class="flex justify-center items-center">
+          <span class="text-gray-400 p-3 cart-total">total price: 0 $</span>
+          <button class="clear-Cart p-3 text-indigo-600 border rounded-lg m-2">
+            Clear Cart
+          </button>
+          <button class="p-3 text-indigo-600 bg-indigo-300 border rounded-lg">
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Cart -->
+  <script type="module" src="/src/js/app.js"></script>
+  <script>
+    const cart = document.querySelector("#cart-btn"),
+      cart_cart = document.querySelector("#cart-cart"),
+      overlay = document.querySelector("#overlay");
+    var cart_classlist = cart_cart.classList;
+    var overlay_class = overlay.classList;
+
+    function showModal() {
+      cart_classlist.add("flex");
+      cart_classlist.remove("hidden");
+      overlay_class.remove("hidden");
+    }
+
+    function closeModal() {
+      cart_classlist.remove("flex");
+      cart_classlist.add("hidden");
+      overlay_class.add("hidden");
+    }
+    cart.addEventListener("click", showModal);
+    overlay.addEventListener("click", closeModal);
+  </script>
+</body>
+
+</html>

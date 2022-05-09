@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Vazir;
+  src: url('./../fonts/Vazir-Code.eot');
+  src: url('./../fonts/Vazir-Code.eot?#iefix') format('embedded-opentype'),
+       url('./../fonts/Vazir-Code.woff') format('woff'),
+       url('./../fonts/Vazir-Code.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('./../fonts/Vazir-Code-Hack.eot');
+  src: url('./../fonts/Vazir-Code-Hack.eot?#iefix') format('embedded-opentype'),
+       url('./../fonts/Vazir-Code-Hack.woff') format('woff'),
+       url('./../fonts/Vazir-Code-Hack.ttf') format('truetype');
+  font-weight: normal;
+}
