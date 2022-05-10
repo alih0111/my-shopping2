@@ -37,8 +37,7 @@ class UI {
   }
   getAddToCartBtns() {
     const addToCartBtns = [...document.querySelectorAll(".add-to-cart")];
-    buttonsDOM = addToCartBtns;
-
+   
     addToCartBtns.forEach((btn) => {
       const id = btn.dataset.id;
       // check if this product id is in cart or not
@@ -73,7 +72,6 @@ class UI {
   }
   setCartValue(cart) {
     // cart items
-
     // cart total price
     let tempCartItems = 0;
     const totalPrice = cart.reduce((acc, curr) => {
@@ -207,14 +205,11 @@ class Storage {
 document.addEventListener("DOMContentLoaded", () => {
   const products = new Products();
   const productsData = products.getProducts();
-  // const cartData = products.getCart();
-  // set up: get cart & set up app:
   const ui = new UI();
   ui.setupApp();
   ui.displayProducts(productsData);
   ui.getAddToCartBtns();
   ui.cartLogic();
-  // ui.setCartValue(cartData);
+
   Storage.saveProducts(productsData);
-  //   console.log(productsData);
 });
