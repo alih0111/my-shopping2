@@ -42,15 +42,16 @@ class UI {
     addToCartBtns.forEach((btn) => {
       const id = btn.dataset.id;
       // check if this product id is in cart or not
-      const isInCart = cart.find((p) => p.id === id);
+      const isInCart = cart.find((p) => p.id == id);
       if (isInCart) {
-        btn.innerText = "out Cart";
+        btn.innerText = "In Cart";
         btn.disabled = true;
+        return
       }
       btn.addEventListener("click", (event) => {
         // console.log(event.target.dataset.id);
         event.target.innerText = "In Cart";
-        event.disabled = true;
+        event.target.disabled = true;
         // get product from products
         const addedProducts = {
           ...Storage.getProducts(id),
@@ -183,7 +184,7 @@ class UI {
     );
     button.innerText = "add to cart";
     button.disabled = false;
-  }
+  } 
 }
 
 // 3.storage
