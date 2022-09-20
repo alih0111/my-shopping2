@@ -1,25 +1,29 @@
+// http://localhost:3000/items
+
+const searchItems = document.querySelector("#search");
+const searchBtns = document.querySelectorAll(".btn-search");
+let allProductsdata = [];
+const filters = {
+  searchItems: "",
+};
+/////////////////
 const productsDOM = document.querySelector(".products-center");
 const cartTotal = document.querySelector(".cart-total");
 const cartItems = document.querySelector(".cart-items");
 const cartContant = document.querySelector(".cart-content");
 const clearCart = document.querySelector(".clear-Cart");
-import {
-  productsData
-} from "./products.js";
 
 let cart = [];
 let buttonsDOM = [];
-// 1. get products
-class Products {
-  // get from api end point
-  getProducts() {
-    return productsData;
-  }
-}
 
-// 2. display products
 class UI {
   displayProducts(products) {
+    console.log(products)
+    if (products.length < 1) {
+
+      productsDOM.innerHTML = []
+      return
+    }
     let result = "";
     products.forEach((item) => {
       result += `<div class="bg-gray-100 rounded overflow-hidden mx-auto shadow mb-3 h-auto max-w-[400px]">
@@ -37,7 +41,7 @@ class UI {
   }
   getAddToCartBtns() {
     const addToCartBtns = [...document.querySelectorAll(".add-to-cart")];
-   
+    buttonsDOM = addToCartBtns
     addToCartBtns.forEach((btn) => {
       const id = btn.dataset.id;
       // check if this product id is in cart or not
@@ -45,7 +49,7 @@ class UI {
       if (isInCart) {
         btn.innerText = "In Cart";
         btn.disabled = true;
-        return
+        return;
       }
       btn.addEventListener("click", (event) => {
         // console.log(event.target.dataset.id);
@@ -182,7 +186,8 @@ class UI {
     );
     button.innerText = "add to cart";
     button.disabled = false;
-  } 
+
+  }
 }
 
 // 3.storage
@@ -202,14 +207,38 @@ class Storage {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const products = new Products();
-  const productsData = products.getProducts();
+function renderProducts(_products, _fileters) {
+  const filteredProducts = _products.filter((p) => {
+    return p.title.toLowerCase().includes(_fileters.searchItems.toLowerCase());
+  });
+  // render to DOM
+  let productsData = filteredProducts;
   const ui = new UI();
   ui.setupApp();
   ui.displayProducts(productsData);
   ui.getAddToCartBtns();
   ui.cartLogic();
-
   Storage.saveProducts(productsData);
+}
+document.addEventListener("DOMContentLoaded", () => {
+  axios
+    .get("http://localhost:3000/items")
+    .then((res) => {
+      allProductsdata = res.data;
+      renderProducts(allProductsdata, filters);
+      searchItems.addEventListener("input", (e) => {
+        filters.searchItems = e.target.value;
+        renderProducts(allProductsdata, filters);       
+      });      
+    })
+    .catch((err) => console.log(err));
 });
+
+searchBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter
+    console.log(filter)
+    filters.searchItems = filter
+    renderProducts(allProductsdata, filters);    
+  })
+})
