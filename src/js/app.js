@@ -221,6 +221,7 @@ function renderProducts(_products, _fileters) {
   Storage.saveProducts(productsData);
 }
 document.addEventListener("DOMContentLoaded", () => {
+  console.log('222');
   axios
     .get("http://localhost:3000/items")
     .then((res) => {
